@@ -1,0 +1,7 @@
+{% if employees_list %}
+    {% for employee in employees_list %}
+        <li>{{  employee.id }}  {{ employee.first_name  }}</li>
+    {% endfor %}
+{% else %}
+    <p>koch nahi hai</p>
+{% endif %}
