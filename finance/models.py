@@ -20,7 +20,10 @@ class GivenToEmployee(models.Model):
     weight = models.DecimalField(max_digits=6, decimal_places=2)
     size_a = models.SmallIntegerField()
     size_b = models.SmallIntegerField()
-    date = models.DateTimeField(default=timezone.now())
+    date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return str(self.employee_id)
 
 
 class TakenFromEmployee(models.Model):
@@ -31,7 +34,7 @@ class TakenFromEmployee(models.Model):
     size_b = models.SmallIntegerField()
     paid = models.BooleanField(default=False)
     paid_by_provider = models.BooleanField(default=False)
-    date = models.DateTimeField(default=timezone.now())
+    date = models.DateTimeField(default=timezone.now)
 
 
 class PendingFromEmployee(models.Model):
@@ -75,7 +78,7 @@ class GivenToProvider(models.Model):
     weight = models.DecimalField(max_digits=10, decimal_places=2)
     size_a = models.SmallIntegerField()
     size_b = models.SmallIntegerField()
-    date = models.DateTimeField(default=timezone.now())
+    date = models.DateTimeField(default=timezone.now)
 
 
 class TakeFromProvider(models.Model):
@@ -85,7 +88,7 @@ class TakeFromProvider(models.Model):
     size_a = models.SmallIntegerField()
     size_b = models.SmallIntegerField()
     paid = models.BooleanField(default=False)
-    date = models.DateTimeField(default=timezone.now())
+    date = models.DateTimeField(default=timezone.now)
 
 
 class PendingToProvider(models.Model):
